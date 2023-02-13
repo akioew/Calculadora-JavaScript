@@ -14,7 +14,6 @@ body {
 
 main {
   width: 375px;
-  height: 780px;
   background-color: #17171c;
   padding: 1.5em;
   display: flex;
@@ -30,23 +29,16 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
-  /* padding-left: 14px; */
-  /* border: 1px solid red; */
 }
 
 #teclas button {
-  /* width: 72px; */
   height: 72px;
-  /* height: 2.5em; */
   border: 1px solid transparent;
   border-radius: 20px;
   font-family: 'Work Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
-  line-height: 40px;
-
-  /* border: 1px solid red; */
 }
 
 #teclas button {
@@ -58,15 +50,18 @@ main {
   background-color: #898989;
 }
 
+#teclas #btn-apaga {
+  font-size: 24px;
+}
+
 #teclas #btn-igual {
   background-color: #0085cb;
 }
 
-#teclas button:hover {
+#teclas button:hover,
+#teclas #btn-igual:hover {
   background-color: #383838;
 }
-
-
 
 #linha-superior {
   font-family: 'Roboto Flex';
@@ -76,17 +71,14 @@ main {
   line-height: 47px;
   color: #ffffff;
   opacity: 0.4;
-
-  /* border: 1px solid red; */
 }
 
 #linha-inferior {
+  margin-bottom: 50px;
   font-family: 'Roboto Flex';
   font-style: normal;
   font-weight: 400;
   font-size: 96px;
   line-height: 96px;
   color: #ffffff;
-
-  /* border: 1px solid red; */
 }
