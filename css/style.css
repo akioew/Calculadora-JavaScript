@@ -10,6 +10,13 @@ body {
   align-items: center;
   justify-content: center;
   padding: 3em;
+  /* Bloquear Seleção */
+  -youbkit-touch-callout: none; /* iOS Safari */
+  -youbkit-user-select: none; /* Chrome 6.0+, Safari 3.1+, Edge e Opera 15+ */
+  -moz-user-select: none; /* Raposa de fogo */
+  -ms-user-select: none; /* IE 10+ e Edge */
+  user-select: none; /* Versão sem prefixo,
+                                atualmente suportado pelo Chrome e Opera */
 }
 
 main {
@@ -64,6 +71,7 @@ main {
 }
 
 #linha-superior {
+  height: 47px;
   font-family: 'Roboto Flex';
   font-style: normal;
   font-weight: 400;
@@ -74,6 +82,7 @@ main {
 }
 
 #linha-inferior {
+  height: 100px;
   margin-bottom: 50px;
   font-family: 'Roboto Flex';
   font-style: normal;

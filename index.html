@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora JavaScript</title>
   <link rel="stylesheet" href="./css/style.css">
-  <script src="./js/script.js" defer></script>
+  <script type="module" src="./js/script.js" defer></script>
+  <!-- <script src="./js/teste.js" defer></script> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&family=Work+Sans&display=swap"
@@ -17,8 +18,8 @@
 <body>
   <main>
     <div id="visor">
-      <div id="linha-superior">123+123</div>
-      <div id="linha-inferior">246</div>
+      <div id="linha-superior"></div>
+      <div id="linha-inferior">0</div>
     </div>
     <div id="teclas">
       <button>MR</button>
@@ -43,10 +44,9 @@
       <button>+</button>
       <button class="numero">+/-</button>
       <button class="numero">0</button>
-      <button class="numero">,</button>
+      <button class="numero">.</button>
       <button id="btn-igual">=</button>
     </div>
   </main>
 </body>
-
 </html>
