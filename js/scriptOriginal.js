@@ -15,7 +15,7 @@ class Calculadora {
     if (digito === '.' && this.textoLinhaInferior.innerText.includes('.')) {
       return;
     }
-    if (this.textoLinhaInferior.innerText === '0') {
+    if (this.textoLinhaInferior.innerText === '0' && digito !== '.') {
       this.textoLinhaInferior.innerText = '';
     }
     // if (this.textoLinhaSuperior.innerText.includes(...this.operadoresMatematicos) && this.acabouDeFazerOperacao) {
