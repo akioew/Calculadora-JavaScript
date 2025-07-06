@@ -63,8 +63,8 @@ class Calculadora {
     // const valorAnterior = +this.textoLinhaSuperior.innerText.split(' ')[0];
     // const valorAtual = this.trocaVirgulaPorPonto(this.textoLinhaInferior.innerText);
 
-//BUG: Se linha superior estiver com formula completa (ex: 3 - 6 =), não é possível usar o resultado da linha 2 como próxima conta.
-//BUG: Se operação ainda estiver incompleta (ex: linha sup 3 - / linha inf 3) e apertar outro sinal, ele executa a segunda operação com os números da tela. O correto seria executar a operação do jeito que foi escrita na primeira vez e reutilizar o resultado para fazer a nova operação.
+    //BUG: Se linha superior estiver com formula completa (ex: 3 - 6 =), não é possível usar o resultado da linha 2 como próxima conta.
+    //BUG: Se operação ainda estiver incompleta (ex: linha sup 3 - / linha inf 3) e apertar outro sinal, ele executa a segunda operação com os números da tela. O correto seria executar a operação do jeito que foi escrita na primeira vez e reutilizar o resultado para fazer a nova operação.
 
     switch (operacao) {
       case '+':
@@ -76,7 +76,7 @@ class Calculadora {
           this.acabouDeFazerOperacao = true;
           break;
         }
-        //BUG: se continuar subtraindo com IGUAL, os sinais ficam se invertendo.
+      //BUG: se continuar subtraindo com IGUAL, os sinais ficam se invertendo.
       case '-':
         if (this.acabouDeFazerOperacao) {
           return;
@@ -95,7 +95,7 @@ class Calculadora {
           this.acabouDeFazerOperacao = true;
           break;
         }
-        //BUG: Continuar a operação usando IGUAL.
+      //BUG: Continuar a operação usando IGUAL.
       case '÷':
         if (this.acabouDeFazerOperacao) {
           return;
@@ -138,9 +138,8 @@ class Calculadora {
   igual() {
     if (this.textoLinhaSuperior.innerText.includes('=')) {
       const operacaoCompleta = `${this.textoLinhaInferior.innerText} ${this.textoLinhaSuperior.innerText.slice(2)}`;
-      this.textoLinhaSuperior.innerText = `${this.textoLinhaSuperior.innerText.split(' ')[2]} ${
-        this.textoLinhaSuperior.innerText.split(' ')[1]
-      }`;
+      this.textoLinhaSuperior.innerText = `${this.textoLinhaSuperior.innerText.split(' ')[2]} ${this.textoLinhaSuperior.innerText.split(' ')[1]
+        }`;
       console.log('opCompleta: ', operacaoCompleta);
       const operador = this.textoLinhaSuperior.innerText.split(' ')[1];
       this.acabouDeFazerOperacao = false;
