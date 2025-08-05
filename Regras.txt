@@ -1,0 +1,46 @@
+Regras Calculadora
+
+A calculadora possui 2 linhas de exibição.
+A linha inferior irá exibir 0 caso nenhuma ação tenha sido executada.
+
+Ao clicar em um número, deve ser exibido na linha inferior.
+Deve existir divisão milesimal separados por ponto.
+O limite de caracteres no visor inferior é 16. Que deve reduzir a fonte automaticamente para caber no espaço disponível.
+Caso o resultado seja maior que 16 digitos, deverá ser exibido como notação científica. No padrão 1.111111111111111e+16.
+
+Ao clicar em um operador matemático:
+	existindo dígito na linha inferior, o dígito(s) mais o operador devem ser exibidos na linha superior, mantendo o digito(s) na linha inferior.
+	caso a calculadora esteja na situação anterior, ao ser pressionado outro operador, o operador atual deve ser trocado pelo pressionado.
+	caso seja pressionado =, a operação matemática deve ser executada.
+	Pressionando novamente =, a operação deve ser reexecutada, considerando o dígito inferior inicialmente existente e o resultado da operação anterior. Somente o resultado será exibido na linha inferior. Linha superior não exibe nada. (Regra não válida para RAIZ. Nesse caso o número inferior será reexibido na linha inferior. Linha superior não exibe nada).
+	
+Ao pressionar vírgula, deve ser acrescentada a vírgula. Caso já exista, nada acontece.
+
+Ao pressionar +-, o sinal do número inferior deve ser alterado.
+
+Ao pressionar backspace, deve ser excluído 1 caracteres da direita para esquerda. Caso o valor seja 0, nada acontece.
+
+Ao pressionar C, tudo será limpo na exibição e na memória.
+
+Ao pressionar Raiz, a operação deve ser executada. Exibição linha superior será símbolo Raiz (dígito inferior). Exibição linha inferior será o resultado.
+Caso seja utilizada no meio de um equação, irá transformar o segundo dígito em raiz quadrada. A exibição logo apos pressionar RAIZ, deverá ser Linha superior: Equação completa mostrando Raiz (digito inferior). Linha inferior: resultado da RAIZ. Após pressionar = a equação completa deve ser calculada.
+
+% -> Deve ser utilizado em conjunto com algum operador matemático.
+	Utilização será: Digitos e operador. Valor deve ser exibido na linha superior. Inferior exibirá somente o valor do dígito.
+	Pressionar outro dígito, ou manter o atual, pressionar %. Linha inferior deve exibir a equação já considerando o valor decimal da porcentagem. Linha inferior deve exibir somente o valor decimal da porcentagem.
+	Pressionando = a equação deve ser executada. Será exibido o resultado na linha inferior. Linha superior não exibe nada.
+	EXEMPLO
+	Entrada: 8 x 9 %.
+	Será exibido:
+	8 x 0.09
+	0.09
+	Ao pressionar = a equação é executada. Saída linha inferior 0.72. Linha superior não exibe nada.
+
+Memória
+
+MS - Memory Set - Guarda o valor da linha inferior na memória. Nada deve ser alterado na exibição.
+MR - Memory Recall - Retorna o valor guardado em memória, como se estivesse apertando qualquer dígito do teclado.
+M+ - Memory Plus - Soma o valor atual do visor inferior com o valor guardado em memória. Nada deve ser alterado na exibição.
+
+
+
