@@ -16,7 +16,7 @@ export class Calculator {
   }
 
   chegouNoLimiteDeCaracteres() {
-    return this.current.replace('.','').length >= 16;
+    return this.current.replace(/[.,]/g, '').length >= 16;
   }
 
   inputDecimal() {
