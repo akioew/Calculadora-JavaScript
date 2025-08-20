@@ -1,6 +1,7 @@
 export const display = {
   upper: document.getElementById('linha-superior'),
   lower: document.getElementById('linha-inferior'),
+  defaultFontSize: 96,
 
   update(current, previous = '', operator = '') {
     this.lower.textContent = current;
@@ -9,8 +10,9 @@ export const display = {
   },
 
   atualizaFontePorLargura() {
-    let fontSize = parseInt(window.getComputedStyle(this.lower).fontSize);
     const larguraMax = this.lower.clientWidth;
+    let fontSize = this.defaultFontSize;
+    this.lower.style.fontSize = `${fontSize}px`;
     while (this.lower.scrollWidth > larguraMax && fontSize > 20) {
       fontSize--;
       this.lower.style.fontSize = `${fontSize}px`;
