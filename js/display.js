@@ -4,7 +4,7 @@ export const display = {
   defaultFontSize: 96,
 
   update(current, previous = '', operator = '') {
-    this.lower.textContent = current;
+    this.lower.textContent = this.adicionaDivisorMilhar(current);
     this.upper.textContent = previous && operator ? `${previous} ${operator}` : '';
     this.atualizaFontePorLargura();
   },
@@ -17,6 +17,12 @@ export const display = {
       fontSize--;
       this.lower.style.fontSize = `${fontSize}px`;
     }
+  },
+
+  adicionaDivisorMilhar(textoReferencia) {
+    const partes = textoReferencia.split('.');
+    partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return partes.join('.');
   },
 
   clear() {
