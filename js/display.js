@@ -4,7 +4,7 @@ export const display = {
   defaultFontSize: 96,
 
   update(current, previous = '', operator = '') {
-    this.lower.textContent = this.adicionaDivisorMilhar(current);
+    this.lower.textContent = this.formatarExibicaoInferior(current);
     this.upper.textContent = previous && operator ? `${previous} ${operator}` : '';
     this.atualizaFontePorLargura();
   },
@@ -17,6 +17,14 @@ export const display = {
       fontSize--;
       this.lower.style.fontSize = `${fontSize}px`;
     }
+  },
+
+  formatarExibicaoInferior(textoReferencia) {
+    if (textoReferencia.length > 16) {
+      const numero = parseFloat(textoReferencia);
+      return numero.toExponential(5);
+    }
+    return this.adicionaDivisorMilhar(textoReferencia);
   },
 
   adicionaDivisorMilhar(textoReferencia) {
